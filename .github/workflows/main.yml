@@ -2,7 +2,7 @@ name: Hashnode Blog Posts
 on:
   schedule:
     # Runs every 6 hours of the day
-    - cron: '0 */6 * * *'
+    - cron: '30 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
       - uses: gautamkrishnar/blog-post-workflow@master
         with:
           comment_tag_name: "BLOGPOSTS"
-          feed_list: "<link-to-your-rss>"
+          feed_list: "https://hashnode.com/@jessicajames1438/rss.xml"
           template: "$newline - $randomEmoji(💯,🔥,💫,🚀,🌮) [$title]($url)"
           commit_message: "recent posts section updated"
           gh_token: ${{ secrets.GITHUB_TOKEN }}
